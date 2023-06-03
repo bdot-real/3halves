@@ -9,6 +9,14 @@ https://templatemo.com/tm-510-letter
     font-family: "Ostrich Rounded";
     src: url('../fonts/ostrich-regular.ttf');
 }
+.navbar {
+    background-color: #000000;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #FFFFFF;
+}
 
 body {
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
@@ -16,6 +24,12 @@ body {
     font-weight: 300;
     overflow-x: hidden;
 }
+h2 {
+    color: #FFFFFF;
+    font-size: 3rem;
+    padding-bottom: 20px;
+}
+
 
 a, button {
 	transition: all 0.3s ease;
@@ -251,11 +265,62 @@ p {
 		margin-top: 20px;
 	}
 }
-    .logo {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        width: 100px;
-        height: auto;
-      }  
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: auto;
+    background: url('../images/logo.svg') repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glitch 3s infinite;
+}
+
+.logo::before,
+.logo::after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../images/logo.svg') repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff0000;
+    animation: glitch 3.5s infinite linear alternate-reverse;
+}
+
+.logo::after {
+    left: -2px;
+    text-shadow: -2px 0 #0000ff;
+    animation: glitch 4s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: skew(0deg);
+    }
+    20% {
+        transform: skew(-1deg);
+    }
+    40% {
+        transform: skew(1deg);
+    }
+    60% {
+        transform: skew(-0.5deg);
+    }
+    80% {
+        transform: skew(0.5deg);
+    }
+}
+#what-we-do, #who-we-are, #contact-us {
+    padding: 50px 0;
+}
+
 
